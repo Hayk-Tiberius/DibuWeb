@@ -47,23 +47,47 @@ nav {
 
 main {
     background-color: #d7dfdf;
-    height: 92vh;
+    height: 96vh;
     
     .main__title {
         display: flex;
         justify-content: space-around;
+        margin-left: 2rem;
         img {
             z-index: 2;
         }
+        a {
+            text-decoration: none;
+        }
         .title {
             font-family: Prata;
-            font-size: 14vw; 
+            font-size: 13vw; 
             position: absolute;
             line-height: 16vw;
-            padding: 5vh 5vw; 
+            margin-top: 0.1em;
             letter-spacing: 0.12em;
             z-index: 1;
+            text-align: center;
+
         }
-        
+        .order__title {
+            margin-top: auto; 
+            margin-bottom: 15vh;
+            border: 0.2em solid black;
+            color: white;
+            background-color: black;
+            padding: 2.5vh 3.8vw;
+            border-radius: 5em;
+            text-align: center;
+        }
+        .messanger__title {
+            margin-top: auto; 
+            margin-bottom: 12.1vh;
+            padding: 2.5vh 5vw;
+            border-radius: 5em;
+            text-align: center;
+            display: flex;
+            gap: 1em
+        }
     }
 }
