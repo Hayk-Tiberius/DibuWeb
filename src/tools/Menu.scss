@@ -1,0 +1,69 @@
+@font-face {
+    font-family: Primo;
+    src: url(../../components/fonts/Primo.ttf);
+}
+
+@font-face {
+    font-family: Prata;
+    src: url(../../components/fonts/Prata-Regular.ttf);
+}
+
+@font-face {
+    font-family: Amagro;
+    src: url(../../components/fonts/Amagro.ttf);
+}
+
+@font-face {
+    font-family: Catalina;
+    src: url(../../components/fonts/Catallina.otf);
+}
+
+@font-face {
+    font-family: Kiyosuna;
+    src: url(../../components/fonts/KiyosunaSans-B-1.0.1.otf);
+}
+
+@font-face {
+    font-family: Riviera;
+    src: url(../../components/fonts/riviera.otf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    .menu__list {
+        width: 100%;
+        height: 2rem;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        
+    }
+}
+
+main {
+    background-color: #d7dfdf;
+    height: 92vh;
+    
+    .main__title {
+        display: flex;
+        justify-content: space-around;
+        img {
+            z-index: 2;
+        }
+        .title {
+            font-family: Prata;
+            font-size: 14vw; 
+            position: absolute;
+            line-height: 16vw;
+            padding: 5vh 5vw; 
+            letter-spacing: 0.12em;
+            z-index: 1;
+        }
+        
+    }
+}
