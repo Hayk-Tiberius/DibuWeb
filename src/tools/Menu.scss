@@ -1,31 +1,11 @@
 @font-face {
-    font-family: Primo;
-    src: url(../../components/fonts/Primo.ttf);
-}
-
-@font-face {
     font-family: Prata;
     src: url(../../components/fonts/Prata-Regular.ttf);
 }
 
 @font-face {
-    font-family: Amagro;
-    src: url(../../components/fonts/Amagro.ttf);
-}
-
-@font-face {
-    font-family: Catalina;
-    src: url(../../components/fonts/Catallina.otf);
-}
-
-@font-face {
-    font-family: Kiyosuna;
-    src: url(../../components/fonts/KiyosunaSans-B-1.0.1.otf);
-}
-
-@font-face {
-    font-family: Riviera;
-    src: url(../../components/fonts/riviera.otf);
+    font-family: MontserratM;
+    src: url(../../components/fonts/Montserrat-Medium.ttf);
 }
 
 *{
@@ -79,6 +59,8 @@ main {
             padding: 2.5vh 3.8vw;
             border-radius: 5em;
             text-align: center;
+            font-family: MontserratM;
+            font-size: 1.4em;
         }
         .messanger__title {
             margin-top: auto; 
@@ -91,3 +73,75 @@ main {
         }
     }
 }
+
+.self__section {
+    display: flex;
+    align-items: flex-start;
+    min-height: 50vh;
+    padding-top: 6em;
+    padding-bottom: 6em;
+    margin-left: 8.2rem;
+    flex-direction: column; 
+    .self__title {
+        font-family: Prata;
+        font-size: 10vw; 
+        letter-spacing: 0.01em;
+        
+    }
+    .self__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 2rem; 
+        align-items: center;
+        font-family: MontserratM;
+        font-size: 1.6em;
+        text-align: justify;
+        .bold__self__grid {
+            font-weight: 900;
+        }
+    }
+}
+
+.visit__card {
+    background-color: #d7dfdf;
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    justify-content: center; 
+    gap: 5rem; 
+    padding: 2rem;
+    .visit__video {
+        padding-top: 2rem;
+    }
+    .visit__items {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 50%; 
+        
+    }
+    .visit__text-container {
+        text-align: justify;
+        max-width: 100%;
+        padding: 1.5rem;
+    }
+    .visit__title {
+        font-family: Prata;
+            font-size: 9vw; 
+            margin-top: 0.1em;
+            text-align: center;
+    }
+    .visit__text {
+        font-family: MontserratM;
+        line-height: 1.5em;
+        font-size: 1.4em;
+        .visit__greetings {
+            font-weight: 800;
+        }
+    }
+   
+    
+}
+
+
+
