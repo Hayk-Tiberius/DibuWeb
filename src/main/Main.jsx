@@ -1,6 +1,7 @@
 import React from "react";
 import Menu from "../tools/Menu";
 import Footer from "../tools/Footer";
+import Carousel from "../tools/Carousel";
 
 const Main = () => {
     return ( 
@@ -60,6 +61,14 @@ const Main = () => {
                         </span>
                     </div>
                 </div>
+            </section>
+            <section className="reviews">
+                <span className="reviews__title">ОТЗЫВЫ</span>
+                <Carousel />
+            </section>
+            <section className="application">
+                <img src={require('../img/selection/application.png') } height={'924vh'} alt="" />
+                <span className="application__text">НАПИСАТЬ МНЕ</span>
             </section>
 
         </>

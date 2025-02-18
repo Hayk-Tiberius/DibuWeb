@@ -138,10 +138,77 @@ main {
         .visit__greetings {
             font-weight: 800;
         }
-    }
-   
-    
+    }    
 }
 
+.reviews {
+    padding-top: 6em;
+    padding-bottom: 6em;
+    margin-left: 8.2rem;
+    .reviews__title {
+    font-family: Prata;
+    font-size: 9vw; 
+    margin-top: 0.1em;
+    }
+    .carousel {
+        position: relative;
+        width: 80vw; 
+        margin: auto;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+       
+      }
+      
+      .carousel__images {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+      }
+      
+      .carousel__image {
+        width: 23%; 
+        height: 40rem;
+        object-fit: cover;
+        border-radius: 0.8rem;
+   
+      }
+      
+      .carousel__button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 1rem;
+        cursor: pointer;
+        font-size: 2rem;
+        transition:6s ease-in-out;
+      }
+      
+      .carousel__button:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+      
 
+      .left {
+        left: 0.8rem;
+      }
+      
+      .right {
+        right:  0.8rem;
+      }
+}
 
+.application {
+    background-color: #d7dfdf;
+    display: flex;
+    justify-content: space-around;
+    .application__text {
+        font-family: Prata;
+        font-size: 9vw; 
+        margin-top: 0.1em;
+    }
+}
