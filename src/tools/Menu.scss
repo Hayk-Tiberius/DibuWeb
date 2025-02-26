@@ -15,14 +15,74 @@
 }
 
 nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    position: fixed;
+    background-color: #ffffff;
+    opacity: 0.6;
+    .logo {
+        width: 10vw;
+        
+    }
     .menu__list {
-        width: 100%;
+        gap: 2em;
+        font-family: MontserratM;
+        font-size: 1.4rem;
         height: 2rem;
         list-style: none;
         display: flex;
         align-items: center;
+        padding-right: 2rem;
+        transition: 300ms opacity ease-in-out;
+    }
+    li {
+        position: relative; 
+        display: inline-block; 
+        padding-bottom:0.4rem; 
+    }
+    
+    li:hover{
+        color: #000000;
+     }
+ 
+    li::after {
+        position: absolute;
+        content: '';
+        bottom: -0.3rem;
+        height: 0.2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        background-color: #000000;
+        transition: 0.3s linear 0.15s;
         
     }
+    
+    li:hover::after {
+        width: 100%;
+    }
+    
+}
+
+nav:hover {
+    opacity: 1;
+    transition: 300ms opacity ease-in-out;
+}
+
+.menu {
+    position: fixed;
+    top: -100px; 
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    transition: top 0.5s ease-in-out;
+    z-index: 1000;
+}
+
+.menu.visible {
+    top: 0; 
 }
 
 main {

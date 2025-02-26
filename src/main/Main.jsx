@@ -1,13 +1,28 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Menu from "../tools/Menu";
 import Footer from "../tools/Footer";
 import Carousel from "../tools/Carousel";
 
 const Main = () => {
+    const [isMenuVisible, setMenuVisible] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const mainTitle = document.querySelector(".main__title");
+            if (mainTitle) {
+                const rect = mainTitle.getBoundingClientRect();
+                setMenuVisible(rect.bottom <= 0); 
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
     return ( 
         <>
-        
+
             <main>
+                <Menu isVisible={isMenuVisible}/>
                 <div className="main__title">
                     <span className="order__title">Заказать мероприятие</span>
                     <img src={require('../img/selection/main.png')} alt="" height={'924vh'}  />
@@ -69,6 +84,9 @@ const Main = () => {
             <section className="application">
                 <img src={require('../img/selection/application.png') } height={'924vh'} alt="" />
                 <span className="application__text">НАПИСАТЬ МНЕ</span>
+                <form action="/">
+
+                </form>
             </section>
 
         </>
