@@ -18,6 +18,30 @@ const Main = () => {
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
+
+    const [result, setResult] = React.useState("");
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+
+    formData.append("access_key", "6c3f406a-689e-49a2-837c-32965c04d50e");
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      event.target.reset();
+    } else {
+      console.log("Error", data);
+      setResult(data.message);
+    }
+  };
+
     return ( 
         <>
 
@@ -46,8 +70,8 @@ const Main = () => {
                     <div className="self__grid">
                         <span><span className="bold__self__grid">Больше не хочу повторять:</span> <br/> Вёл фестиваль 18 часов, а потом 2 дня отсыпался</span>
                         <span><span className="bold__self__grid">Что кроме ведения?</span> <br/> Актёр театра и кино, импровизация и юмор - моя основа</span>
-                        <span><span className="bold__self__grid">Постоянный ведущий</span> <br/> программы «Мы-граждане России!» в Московской области</span>
-                        <span><span className="bold__self__grid">В ивенте с 2020 года,</span><br/> вёл корпоративы сотрудникам Газпрома и Мегафона,<br/>  но в уже детстве разогревал зал перед Игорем Николаевым</span>
+                        <span><span className="bold__self__grid">Постоянный ведущий</span> <br/> Программы «Мы-граждане России!» в Московской области</span>
+                        <span><span className="bold__self__grid">В ивенте с 2020 года,</span><br/> Вёл корпоративы сотрудникам Газпрома и Мегафона,<br/>  но в уже детстве разогревал зал перед Игорем Николаевым</span>
                     </div>
                 </div>
             </section>
@@ -83,10 +107,26 @@ const Main = () => {
             </section>
             <section className="application">
                 <img src={require('../img/selection/application.png') } height={'924vh'} alt="" />
-                <span className="application__text">НАПИСАТЬ МНЕ</span>
-                <form action="/">
-
-                </form>
+                <div>
+                    <span className="application__text">НАПИСАТЬ МНЕ</span>
+                    <form onSubmit={onSubmit}>
+                        <div className="application__items">
+                            <input type="date" placeholder="Дата мероприятия" required/>
+                            <input id="telNo" name="telNo" type="tel" list="defaultTels" placeholder="Мероприятие" required/>
+                            <datalist id="defaultTels">
+                              <option value="Свадьба"></option>
+                              <option value="Корпоратив"></option>
+                              <option value="Юбилей"></option>
+                              <option value="Другое"></option>
+                            </datalist>
+                            <input type="text" placeholder="Ваше имя" required/>
+                            <input type="tel" placeholder="Номер телефона" required/>
+                            <button> Отправить заявку </button>
+                            <span className="confidential__text">Нажимая кнопку, я соглашаюсь с <a href={require("../img/confidential/ПолитикаКонфиденциальности.pdf") } onClick={(e) => { e.preventDefault(); window.open("../img/confidential/ПолитикаКонфиденциальности.pdf", '_blank'); }}>политикой конфиденциальности</a></span>
+                        </div>
+                    </form>
+                    <span>{result}</span>
+                </div>
             </section>
 
         </>
