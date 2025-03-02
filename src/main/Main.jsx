@@ -21,27 +21,38 @@ const Main = () => {
 
     const [result, setResult] = React.useState("");
 
-  const onSubmit = async (event) => {
-    event.preventDefault();
-    const formData = new FormData(event.target);
-
-    formData.append("access_key", "6c3f406a-689e-49a2-837c-32965c04d50e");
-
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: formData
-    });
-
-    const data = await response.json();
-
-    if (data.success) {
-      event.target.reset();
-    } else {
-      console.log("Error", data);
-      setResult(data.message);
-    }
-  };
-
+    const onSubmit = async (event) => {
+        event.preventDefault();
+        
+        const formData = new FormData(event.target);
+        formData.append("access_key", "6c3f406a-689e-49a2-837c-32965c04d50e");
+    
+        
+        for (let [key, value] of formData.entries()) {
+            console.log(key, value);
+        }
+    
+        try {
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                body: formData
+            });
+    
+            const data = await response.json();
+    
+            if (data.success) {
+                console.log("Форма успешно отправлена!");
+                event.target.reset();
+            } else {
+                console.log("Ошибка отправки формы", data);
+                setResult(data.message);
+            }
+        } catch (error) {
+            console.log("Ошибка запроса", error);
+            setResult("Ошибка отправки. Попробуйте позже.");
+        }
+    };
+    
     return ( 
         <>
 
@@ -110,25 +121,35 @@ const Main = () => {
                 <div>
                     <span className="application__text">НАПИСАТЬ МНЕ</span>
                     <form onSubmit={onSubmit}>
-                        <div className="application__items">
-                            <input type="date" placeholder="Дата мероприятия" required/>
-                            <input id="telNo" name="telNo" type="tel" list="defaultTels" placeholder="Мероприятие" required/>
-                            <datalist id="defaultTels">
-                              <option value="Свадьба"></option>
-                              <option value="Корпоратив"></option>
-                              <option value="Юбилей"></option>
-                              <option value="Другое"></option>
-                            </datalist>
-                            <input type="text" placeholder="Ваше имя" required/>
-                            <input type="tel" placeholder="Номер телефона" required/>
-                            <button> Отправить заявку </button>
-                            <span className="confidential__text">Нажимая кнопку, я соглашаюсь с <a href={require("../img/confidential/ПолитикаКонфиденциальности.pdf") } onClick={(e) => { e.preventDefault(); window.open("../img/confidential/ПолитикаКонфиденциальности.pdf", '_blank'); }}>политикой конфиденциальности</a></span>
-                        </div>
+                            <div className="application__items">
+                                <input type="date" name="date" placeholder="Дата мероприятия" required/>
+
+                                <input id="telNo" name="eventType" type="text" list="defaultTels" placeholder="Мероприятие" required/>
+                                <datalist id="defaultTels">
+                                    <option value="Свадьба"></option>
+                                    <option value="Корпоратив"></option>
+                                    <option value="Юбилей"></option>
+                                    <option value="Другое"></option>
+                                </datalist>
+
+                                <input type="text" name="name" placeholder="Ваше имя" required/>
+                                <input type="tel" name="phone" placeholder="Номер телефона" required/>
+
+                                <button type="submit">Отправить заявку</button>
+
+                                <span className="confidential__text">
+                                    Нажимая кнопку, я соглашаюсь с   <br/>
+                                    <a href={require("../img/confidential/ПолитикаКонфиденциальности.pdf")}
+                                        onClick={(e) => { e.preventDefault(); window.open("../img/confidential/ПолитикаКонфиденциальности.pdf", '_blank'); }}>
+                                         политикой конфиденциальности
+                                    </a>
+                                </span>
+                            </div>
                     </form>
                     <span>{result}</span>
                 </div>
             </section>
-
+            <Footer />
         </>
     )
 }

@@ -26,7 +26,7 @@ nav {
     align-items: center;
     position: fixed;
     background-color: #ffffff;
-    opacity: 0.7;
+   
     .logo {
         width: 10vw;
         
@@ -71,10 +71,7 @@ nav {
     
 }
 
-nav:hover {
-    opacity: 1;
-    transition: 300ms opacity ease-in-out;
-}
+
 
 .menu {
     position: fixed;
@@ -316,5 +313,36 @@ main {
         font-family: MontserratM;
         color: white;
         text-align: center;
+    }
+}
+
+footer {
+    background-color: #000000;
+    color:white;
+    display: flex;
+    justify-content: space-between;
+    font-family: MontserratM;
+    font-size: 1.6rem;
+    padding: 1.5rem 2.4rem 0;
+    line-height: 3.5rem;
+    .logo {
+        width: 12vw;   
+    }
+    .footer__container__2 {
+        text-align: center;
+        justify-content: center;
+        .footer__text {
+            font-size: 1.1rem;
+            color: #645e5e;
+        }
+    }
+    .footer__container__3{ 
+        justify-content: center;
+        text-align: center;
+        .footer__text {
+            font-size: 0.7rem;
+            color: #645e5e;
+            line-height: -3rem;
+        }
     }
 }
