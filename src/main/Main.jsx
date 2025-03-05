@@ -59,7 +59,7 @@ const Main = () => {
             <main>
                 <Menu isVisible={isMenuVisible}/>
                 <div className="main__title">
-                    <span className="order__title">Заказать мероприятие</span>
+                    <span className="order__title"><a href="#application">Заказать мероприятие</a></span>
                     <img src={require('../img/selection/main.png')} alt="" height={'924vh'}  />
                     <span className="title">ДМИТРИЙ <span >БУЯНОВ</span></span>
                     <div className="messanger__title">
@@ -75,7 +75,7 @@ const Main = () => {
                     </div>
                 </div>
             </main>
-            <section className="self__section">
+            <section id="self__section" className="self__section">
                 <div>
                     <span className="self__title">ОБО МНЕ</span>
                     <div className="self__grid">
@@ -86,7 +86,7 @@ const Main = () => {
                     </div>
                 </div>
             </section>
-            <section className="visit__card">
+            <section id="visit__card" className="visit__card">
                 
                 <div className="visit__video">
                 <iframe src="https://vk.com/video_ext.php?oid=215281820&id=456240044&hd=2&autoplay=1" 
@@ -112,11 +112,11 @@ const Main = () => {
                     </div>
                 </div>
             </section>
-            <section className="reviews">
+            <section id="reviews" className="reviews">
                 <span className="reviews__title">ОТЗЫВЫ</span>
                 <Carousel />
             </section>
-            <section className="application">
+            <section id="application" className="application">
                 <img src={require('../img/selection/application.png') } height={'924vh'} alt="" />
                 <div>
                     <span className="application__text">НАПИСАТЬ МНЕ</span>

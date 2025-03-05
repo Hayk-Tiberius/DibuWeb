@@ -7,10 +7,10 @@ const Menu = ({ isVisible }) => {
         <nav className={`menu ${isVisible ? "visible" : ""}`}>
             <img src={logo} className="logo" alt="" />
             <ul className="menu__list">
-                <li>Про себя</li>
-                <li>Визитка</li>
-                <li>Отзывы</li>
-                <li>Напиши мне</li>
+                <a href="#self__section"><li>Про себя</li></a>
+                <a href="#visit__card"><li>Визитка</li></a>
+                <a href="#reviews"><li>Отзывы</li></a>
+                <a href="#application"><li>Напиши мне</li></a>
             </ul>
         </nav>
     );

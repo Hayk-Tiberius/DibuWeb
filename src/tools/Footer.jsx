@@ -6,12 +6,17 @@ const Footer = () => {
         <footer>
             <div className="footer__container__1">
                 <span>Буянов Дмитрий Романович</span><br/>  
-                <span>Политика Конфиденциальности</span>
+                <a className="footer_confidential" href={require("../img/confidential/ПолитикаКонфиденциальности.pdf")}
+                    onClick={(e) => { e.preventDefault(); window.open("../img/confidential/ПолитикаКонфиденциальности.pdf", '_blank'); }}>
+                    <span>Политика Конфиденциальности</span>
+                </a>
             </div>
             <div className="footer__container__2">
                 <span><img className="logo" src={logo} alt="" /></span><br/>  
-                <span>© 2025</span><br/>  
-                <span className="footer__text">created and designed by PrusMarius</span>
+                <span>© 2025</span><br/>
+                <a className="footer_confidential" href="https://t.me/HaikHov" onClick={(e) => { e.preventDefault(); window.open("https://t.me/HaikHov", '_blank'); }}>  
+                    <span className="footer__text">created and designed by PrusMarius</span>
+                </a>
             </div>
             <div className="footer__container__3">
                 <span>+7 (910) 408-03-61</span><br/>  
