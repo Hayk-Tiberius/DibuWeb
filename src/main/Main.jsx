@@ -59,18 +59,18 @@ const Main = () => {
             <main>
                 <Menu isVisible={isMenuVisible}/>
                 <div className="main__title">
-                    <span className="order__title"><a href="#application">Заказать мероприятие</a></span>
-                    <img src={require('../img/selection/main.png')} alt="" height={'924vh'}  />
                     <span className="title">ДМИТРИЙ <span >БУЯНОВ</span></span>
+                    <img src={require('../img/selection/main.png')} className="img__title"  />
+                    <span className="order__title"><a href="#application">Заказать мероприятие</a></span>
                     <div className="messanger__title">
                         <a href="https://vk.com/dibuman" onClick={(e) => { e.preventDefault(); window.open("https://vk.com/dibuman", '_blank'); }}>
-                            <img src={require("../img/icons/vk.webp")} alt="" width={"70wv"} style={{ border: "0.2em solid black", borderRadius: "1.2em", padding: "0.3em" }} />
+                            <img src={require("../img/icons/vk.webp")} alt=""  style={{ border: "0.2em solid black", borderRadius: "1.2em", padding: "0.3em" }} />
                         </a>
                         <a href="https://t.me/Event_Buyanov" onClick={(e) => { e.preventDefault(); window.open("https://t.me/Event_Buyanov", '_blank'); }}>
-                            <img src={require("../img/icons/telegram.webp")} alt="" width={"70wv"} />
+                            <img src={require("../img/icons/telegram.webp")} alt="" />
                         </a>
                         <a href="https://www.instagram.com/tot_samiy_dibu" onClick={(e) => { e.preventDefault(); window.open("https://www.instagram.com/tot_samiy_dibu", '_blank'); }}>
-                            <img src={require("../img/icons/instagramm.png")} alt="" width={"72wv"} />
+                            <img src={require("../img/icons/instagramm.png")} alt=""  />
                         </a>
                     </div>
                 </div>
@@ -89,7 +89,8 @@ const Main = () => {
             <section id="visit__card" className="visit__card">
                 
                 <div className="visit__video">
-                <iframe src="https://vk.com/video_ext.php?oid=215281820&id=456240044&hd=2&autoplay=1" 
+                <iframe 
+                    src="https://vk.com/video_ext.php?oid=215281820&id=456240044&hd=2&autoplay=1" 
                     width="360" 
                     height="716" 
                     allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;"
@@ -117,7 +118,7 @@ const Main = () => {
                 <Carousel />
             </section>
             <section id="application" className="application">
-                <img src={require('../img/selection/application.png') } height={'924vh'} alt="" />
+                <img src={require('../img/selection/application.png') } className="img__title" alt="" />
                 <div>
                     <span className="application__text">НАПИСАТЬ МНЕ</span>
                     <form onSubmit={onSubmit}>

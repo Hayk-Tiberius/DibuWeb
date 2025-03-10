@@ -102,9 +102,19 @@ main {
         margin-left: 2rem;
         img {
             z-index: 2;
+            max-height: 4.375rem;
+            height: auto; /* Сохранение пропорций */
+            object-fit: cover;
+           
         }
         a {
             text-decoration: none;
+        }
+        .img__title{
+            height: auto; /* Сохранение пропорций */
+            max-height: 57.75rem; /* Максимальная высота, чтобы не выходило за рамки */
+             object-fit: cover;
+             
         }
         .title {
             font-family: Prata;
@@ -330,6 +340,10 @@ main {
     background-color: #d7dfdf;
     display: flex;
     justify-content: space-around;
+    .img__title {
+        height: 57.75rem;
+        object-fit: cover;
+    }
     .application__text {
         font-family: Prata;
         font-size: 9vw; 
@@ -411,5 +425,141 @@ footer {
             color: #645e5e;
             line-height: -3rem;
         }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+    }
+
+    .menu__list {
+        font-size: 1.2rem;
+        padding-right: 0;
+        gap: 1.5em;
+    }
+
+    .main__title {
+        flex-direction: column;
+        text-align: center;
+        .order__title {
+            font-size: 1.2em;
+            margin-bottom: 0rem !important;
+        }
+    }
+
+    .title {
+        font-size: 10vw;
+        line-height: 12vw;
+        position: absolute;
+    }
+
+    
+
+    .messanger__title {
+        flex-direction: row;
+        gap: 0.8em;
+    }
+
+    .self__section {
+        margin-left: 2rem;
+        padding-top: 4em;
+        padding-bottom: 4em;
+    }
+
+    .self__grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .visit__card {
+        flex-direction: column;
+        gap: 3rem;
+        text-align: center;
+    }
+
+    .visit__items {
+        max-width: 90%;
+    }
+
+    .reviews {
+        margin-left: 2rem;
+    }
+
+    .carousel__image {
+        width: 90%;
+        height: auto;
+    }
+
+    .modal__image {
+        max-width: 90%;
+        max-height: 70vh;
+    }
+
+    .application {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .application__items {
+        width: 80%;
+    }
+
+    .confidential__text {
+        font-size: 0.9rem;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+        font-size: 1.2rem;
+        line-height: 2rem;
+    }
+
+    .footer__container__2,
+    .footer__container__3 {
+        margin-top: 1rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .menu__list {
+        flex-direction: column;
+        gap: 1em;
+        .order__title {
+            font-size: 1em;
+            margin-bottom: 0rem !important;
+        }
+    
+    }
+
+    .title {
+        font-size: 8vw;
+        position: relative;
+    }
+
+    .self__grid {
+        font-size: 1.2em;
+    }
+
+   
+    .messanger__title {
+        gap: 0.5em;
+        flex-direction: row;
+    }
+
+    .carousel__image {
+        width: 80%;
+    }
+
+    .application__items {
+        width: 90%;
+    }
+
+    footer {
+        font-size: 1rem;
     }
 }
