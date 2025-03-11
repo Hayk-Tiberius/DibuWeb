@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-
 const images = [
     require("../img/reviews/IMG_2270.JPG"),
     require("../img/reviews/IMG_2272.JPG"),
@@ -25,6 +24,7 @@ const Carousel = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth); // Track window width
   
     useEffect(() => {
       const interval = setInterval(() => {
@@ -33,7 +33,12 @@ const Carousel = () => {
       return () => clearInterval(interval);
     }, [currentIndex]);
   
-    
+    useEffect(() => {
+      const handleResize = () => setWindowWidth(window.innerWidth); 
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
     const nextSlide = () => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
     };
@@ -45,37 +50,40 @@ const Carousel = () => {
     };
   
     const getVisibleImages = () => {
-      const endIndex = currentIndex + 4;
-  
-      // Если не выходит за границы массива — просто берём срез
-      if (endIndex <= images.length) {
-          return images.slice(currentIndex, endIndex);
+      if (windowWidth <= 768) {
+       
+        return [images[currentIndex]];
       } else {
-          // Берём оставшиеся и добавляем с начала массива
-          return [...images.slice(currentIndex, images.length), ...images.slice(0, endIndex - images.length)];
-      }
-
-    };
+        // Показывать 4 изображения на больших экранах
+        const endIndex = currentIndex + 4;
     
+        if (endIndex <= images.length) {
+          return images.slice(currentIndex, endIndex);
+        } else {
+          return [...images.slice(currentIndex, images.length), ...images.slice(0, endIndex - images.length)];
+        }
+      }
+    };
+
     const openModal = (index) => {
       setIsModalOpen(true);
       setSelectedImageIndex(index);
-    } 
+    };
 
     const closeModal = () => {
       setIsModalOpen(false);
-    }
+    };
 
     const nextModalSlide = () => {
       setSelectedImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }
+    };
 
     const prevModalSlide = () => {
-      setSelectedImageIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length)
-    }
-  return (
-    <>
-       
+      setSelectedImageIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+    };
+
+    return (
+      <>
         <div className="carousel">
             <button className="carousel__button left" onClick={prevSlide}>‹</button>
 
@@ -94,7 +102,7 @@ const Carousel = () => {
             <button className="carousel__button right" onClick={nextSlide}>›</button>
 
             {isModalOpen && (
-                    <div className="modal" onClick={closeModal}>
+                <div className="modal" onClick={closeModal}>
                     <div className="modal__content" onClick={(e) => e.stopPropagation()}>
                         <button className="modal__close" onClick={closeModal}>×</button>
                         <button className="modal__prev" onClick={nextModalSlide}>‹</button>
@@ -102,14 +110,10 @@ const Carousel = () => {
                         <button className="modal__next" onClick={prevModalSlide}>›</button>
                     </div>
                 </div>
-              )
-            }
+            )}
         </div>
+      </>
+    );
+};
 
-        
-       
-    </>
-);
-  };
-  
-  export default Carousel;
+export default Carousel;

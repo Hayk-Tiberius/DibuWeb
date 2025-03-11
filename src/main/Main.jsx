@@ -60,18 +60,20 @@ const Main = () => {
                 <Menu isVisible={isMenuVisible}/>
                 <div className="main__title">
                     <span className="title">ДМИТРИЙ <span >БУЯНОВ</span></span>
-                    <img src={require('../img/selection/main.png')} className="img__title"  />
-                    <span className="order__title"><a href="#application">Заказать мероприятие</a></span>
-                    <div className="messanger__title">
-                        <a href="https://vk.com/dibuman" onClick={(e) => { e.preventDefault(); window.open("https://vk.com/dibuman", '_blank'); }}>
-                            <img src={require("../img/icons/vk.webp")} alt=""  style={{ border: "0.2em solid black", borderRadius: "1.2em", padding: "0.3em" }} />
-                        </a>
-                        <a href="https://t.me/Event_Buyanov" onClick={(e) => { e.preventDefault(); window.open("https://t.me/Event_Buyanov", '_blank'); }}>
-                            <img src={require("../img/icons/telegram.webp")} alt="" />
-                        </a>
-                        <a href="https://www.instagram.com/tot_samiy_dibu" onClick={(e) => { e.preventDefault(); window.open("https://www.instagram.com/tot_samiy_dibu", '_blank'); }}>
-                            <img src={require("../img/icons/instagramm.png")} alt=""  />
-                        </a>
+                        <div className="main__items">
+                                <span className="order__title"><a href="#application">Заказать мероприятие</a></span>
+                                <img src={require('../img/selection/main.png')} className="img__title"  />
+                                <div className="messanger__title">
+                                <a href="https://vk.com/dibuman" onClick={(e) => { e.preventDefault(); window.open("https://vk.com/dibuman", '_blank'); }}>
+                                    <img src={require("../img/icons/vk.webp")} alt=""  style={{ border: "0.2em solid black", borderRadius: "1.2em", padding: "0.3em" }} />
+                                </a>
+                                <a href="https://t.me/Event_Buyanov" onClick={(e) => { e.preventDefault(); window.open("https://t.me/Event_Buyanov", '_blank'); }}>
+                                    <img src={require("../img/icons/telegram.webp")} alt="" />
+                                </a>
+                                <a href="https://www.instagram.com/tot_samiy_dibu" onClick={(e) => { e.preventDefault(); window.open("https://www.instagram.com/tot_samiy_dibu", '_blank'); }}>
+                                    <img src={require("../img/icons/instagramm.png")} alt=""  />
+                                </a>
+                        </div>    
                     </div>
                 </div>
             </main>
@@ -99,8 +101,7 @@ const Main = () => {
                 </iframe>
                 </div>
                 <div className="visit__items">
-                    <span className="visit__title">ВИЗИТКА</span>
-                    <div className="visit__text-container">
+                    <span className="visit__title">ВИЗИТКА</span>     
                         <span className="visit__text">
                             <span className="visit__greetings">Познакомьтесь со мной ещё больше!</span> <br />
                             Я беру на себя творческие моменты, что помогает Вам не переживать о деталях. <br />
@@ -110,7 +111,6 @@ const Main = () => {
                             Ну и конечно всегда на связи и готов помочь со всеми вопросами, потому что Ваше мероприятие - Моя любимая работа. <br />
                             Стремлюсь быть не просто ведущим, а генератором позитива и радости и заряжать своей энергией Вас.<br />
                         </span>
-                    </div>
                 </div>
             </section>
             <section id="reviews" className="reviews">

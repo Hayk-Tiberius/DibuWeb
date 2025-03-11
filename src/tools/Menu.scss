@@ -95,26 +95,30 @@ nav {
 main {
     background-color: #d7dfdf;
     height: 96vh;
-    
     .main__title {
         display: flex;
-        justify-content: space-around;
+        height: 100%;
         margin-left: 2rem;
+        .main__items{
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: end;
+            height: 100%;
+        }
         img {
             z-index: 2;
             max-height: 4.375rem;
-            height: auto; /* Сохранение пропорций */
+            height: auto;
             object-fit: cover;
-           
         }
         a {
             text-decoration: none;
         }
         .img__title{
-            height: auto; /* Сохранение пропорций */
-            max-height: 57.75rem; /* Максимальная высота, чтобы не выходило за рамки */
-             object-fit: cover;
-             
+            height: auto; 
+            max-height: 47.75rem; 
+            object-fit: cover; 
         }
         .title {
             font-family: Prata;
@@ -187,6 +191,7 @@ main {
     justify-content: center; 
     gap: 5rem; 
     padding: 2rem;
+    width: 100%;
     .visit__video {
         padding-top: 2rem;
     }
@@ -196,11 +201,6 @@ main {
         align-items: center;
         max-width: 50%; 
         
-    }
-    .visit__text-container {
-        text-align: justify;
-        max-width: 100%;
-        padding: 1.5rem;
     }
     .visit__title {
         font-family: Prata;
@@ -212,6 +212,9 @@ main {
         font-family: MontserratM;
         line-height: 1.5em;
         font-size: 1.4em;
+        text-align: justify;
+        max-width: 100%;
+        
         .visit__greetings {
             font-weight: 800;
         }
@@ -340,14 +343,19 @@ main {
     background-color: #d7dfdf;
     display: flex;
     justify-content: space-around;
+    
     .img__title {
         height: 57.75rem;
         object-fit: cover;
     }
+    
     .application__text {
         font-family: Prata;
         font-size: 9vw; 
         margin-top: 0.1em;
+        display: flex;
+        align-items: center;
+       
     }
     .application__items {
         display: flex;
@@ -442,8 +450,10 @@ footer {
     }
 
     .main__title {
-        flex-direction: column;
+        .main__items{
+        flex-direction: column-reverse;
         text-align: center;
+        }
         .order__title {
             font-size: 1.2em;
             margin-bottom: 0rem !important;
@@ -456,11 +466,19 @@ footer {
         position: absolute;
     }
 
-    
+    .order__title {
+        font-size: 1em;
+        margin-bottom: 0rem !important;
+        width: 100%;
+        display: block !important;
+        
+    }
 
     .messanger__title {
+        width: 100%;
+        display: block !important;
         flex-direction: row;
-        gap: 0.8em;
+        margin-bottom: 0rem !important;
     }
 
     .self__section {
@@ -478,11 +496,18 @@ footer {
         flex-direction: column;
         gap: 3rem;
         text-align: center;
+        padding: 0 !important;
+        .visit__items{
+            max-width: 75% !important;
+            
+            .visit__text {
+                width: 100% !important;
+                padding: 0 !important;        
+            }
+        }
     }
 
-    .visit__items {
-        max-width: 90%;
-    }
+  
 
     .reviews {
         margin-left: 2rem;
@@ -504,8 +529,13 @@ footer {
         text-align: center;
     }
 
-    .application__items {
-        width: 80%;
+    
+
+    .application__items form {
+        width: 100%;
+        display: flex !important;
+        flex-direction: column;
+        align-items: center; 
     }
 
     .confidential__text {
@@ -526,14 +556,15 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
-    .menu__list {
-        flex-direction: column;
+    .menu__list { 
         gap: 1em;
-        .order__title {
-            font-size: 1em;
-            margin-bottom: 0rem !important;
-        }
-    
+    }
+
+    .main__title {
+        .main__items{
+            flex-direction: column-reverse;
+            text-align: center;
+            }
     }
 
     .title {
@@ -541,25 +572,77 @@ footer {
         position: relative;
     }
 
+    .order__title {
+        font-size: 1em;
+        margin-bottom: 0rem !important;
+        width: 100%;
+        display: block !important;
+
+    }
+
     .self__grid {
         font-size: 1.2em;
+        display: flex !important;
+        flex-direction: column;
     }
 
    
     .messanger__title {
-        gap: 0.5em;
+        width: 100%;
+        display: block !important;
         flex-direction: row;
+        margin-bottom: 0rem !important;
     }
 
-    .carousel__image {
-        width: 80%;
+    .visit__card {
+        flex-direction: column;
+        gap: 3rem;
+        text-align: center;
+        width: 100%;
+        padding: 0 !important;
+        .visit__items{
+            max-width: 75% !important;
+            
+            .visit__text {
+                width: 100% !important;
+                padding: 0 !important;        
+            }
+        }
+    }
+    .carousel__images {
+       width: 100%;
+    
+      .carousel__image {
+        width: 100%; /* Изображение растягивается на всю ширину */
+        height: auto;
+        object-fit: contain; /* Для сохранения пропорций и видимости всего изображения */
+      }
     }
 
-    .application__items {
-        width: 90%;
+    
+    .application {
+      
+        .application__items form {
+            width: 100%; /* Чтобы форма заняла всю ширину родителя */
+            display: flex ;
+            flex-direction: column;
+            align-items: center !important; 
+        }
+        .application__items {
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; 
+            align-items: center; 
+            text-align: center; 
+        }
+        .img__title {
+            display: none;
+        }
+       
     }
-
     footer {
         font-size: 1rem;
     }
+
 }

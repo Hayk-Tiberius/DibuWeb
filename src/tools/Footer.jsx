@@ -15,7 +15,7 @@ const Footer = () => {
                 <span><img className="logo" src={logo} alt="" /></span><br/>  
                 <span>© 2025</span><br/>
                 <a className="footer_confidential" href="https://t.me/HaikHov" onClick={(e) => { e.preventDefault(); window.open("https://t.me/HaikHov", '_blank'); }}>  
-                    <span className="footer__text">created and designed by PrusMarius</span>
+                    <span className="footer__text">created and designed by Prus</span>
                 </a>
             </div>
             <div className="footer__container__3">
