@@ -116,6 +116,7 @@ main {
             text-decoration: none;
         }
         .img__title{
+            
             height: auto; 
             max-height: 47.75rem; 
             object-fit: cover; 
@@ -511,6 +512,9 @@ footer {
 
     .reviews {
         margin-left: 2rem;
+        padding-top: 1.5rem !important;
+        padding-bottom: 1.5rem !important;
+        
     }
 
     .carousel__image {
@@ -561,10 +565,16 @@ footer {
     }
 
     .main__title {
+        margin-left: 0rem !important;
         .main__items{
             flex-direction: column-reverse;
             text-align: center;
+           
             }
+        .img__title {
+            width: 100%;
+            
+        }
     }
 
     .title {
@@ -574,7 +584,7 @@ footer {
 
     .order__title {
         font-size: 1em;
-        margin-bottom: 0rem !important;
+        margin-bottom: auto !important;
         width: 100%;
         display: block !important;
 
@@ -619,6 +629,10 @@ footer {
       }
     }
 
+    .reviews {
+        padding-top: 1.5rem !important;
+        padding-bottom: 1.5rem !important;
+    }
     
     .application {
       
