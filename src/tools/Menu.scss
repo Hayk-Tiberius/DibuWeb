@@ -373,7 +373,7 @@ main {
 
     input {
         border-radius: 1.3rem;
-        width: 60%; /* Увеличил ширину для лучшего вида */
+        width: 90%; 
         padding: 0.8rem;
         border: none;
         outline: none;
@@ -383,7 +383,7 @@ main {
         
     }
     button {
-        width: 60%; 
+        width: 90%; 
         padding: 1rem;
         background-color: #ff0000;
         color: white;
@@ -491,6 +491,7 @@ footer {
     .self__grid {
         grid-template-columns: 1fr;
         text-align: center;
+        margin-right: 2rem;
     }
 
     .visit__card {
@@ -586,7 +587,7 @@ footer {
         font-size: 1em;
         margin-bottom: auto !important;
         width: 100%;
-        display: block !important;
+        margin-top: 0 !important;
 
     }
 
@@ -594,14 +595,16 @@ footer {
         font-size: 1.2em;
         display: flex !important;
         flex-direction: column;
+        margin-right: 2rem;
     }
 
    
     .messanger__title {
+        display: none !important;
         width: 100%;
-        display: block !important;
+        
         flex-direction: row;
-        margin-bottom: 0rem !important;
+        margin-bottom: 6rem !important;
     }
 
     .visit__card {
@@ -609,7 +612,8 @@ footer {
         gap: 3rem;
         text-align: center;
         width: 100%;
-        padding: 0 !important;
+        
+        padding-bottom: 1.5rem !important;
         .visit__items{
             max-width: 75% !important;
             
@@ -635,21 +639,16 @@ footer {
     }
     
     .application {
-      
-        .application__items form {
-            width: 100%; /* Чтобы форма заняла всю ширину родителя */
-            display: flex ;
-            flex-direction: column;
-            align-items: center !important; 
-        }
+        padding-bottom: 1.5rem;
         .application__items {
-            width: 90%;
+            width: 100%;
             display: flex;
             flex-direction: column;
             justify-content: center; 
             align-items: center; 
             text-align: center; 
         }
+       
         .img__title {
             display: none;
         }

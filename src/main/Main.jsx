@@ -64,16 +64,16 @@ const Main = () => {
                                 <span className="order__title"><a href="#application">Заказать мероприятие</a></span>
                                 <img src={require('../img/selection/main.png')} className="img__title"  />
                                 <div className="messanger__title">
-                                <a href="https://vk.com/dibuman" onClick={(e) => { e.preventDefault(); window.open("https://vk.com/dibuman", '_blank'); }}>
-                                    <img src={require("../img/icons/vk.webp")} alt=""  style={{ border: "0.2em solid black", borderRadius: "1.2em", padding: "0.3em" }} />
-                                </a>
-                                <a href="https://t.me/Event_Buyanov" onClick={(e) => { e.preventDefault(); window.open("https://t.me/Event_Buyanov", '_blank'); }}>
-                                    <img src={require("../img/icons/telegram.webp")} alt="" />
-                                </a>
-                                <a href="https://www.instagram.com/tot_samiy_dibu" onClick={(e) => { e.preventDefault(); window.open("https://www.instagram.com/tot_samiy_dibu", '_blank'); }}>
-                                    <img src={require("../img/icons/instagramm.png")} alt=""  />
-                                </a>
-                        </div>    
+                                    <a href="https://vk.com/dibuman" onClick={(e) => { e.preventDefault(); window.open("https://vk.com/dibuman", '_blank'); }}>
+                                        <img src={require("../img/icons/vk.webp")} alt=""  style={{ border: "0.2em solid black", borderRadius: "1.2em", padding: "0.3em" }} />
+                                    </a>
+                                    <a href="https://t.me/Event_Buyanov" onClick={(e) => { e.preventDefault(); window.open("https://t.me/Event_Buyanov", '_blank'); }}>
+                                        <img src={require("../img/icons/telegram.webp")} alt="" />
+                                    </a>
+                                    <a href="https://www.instagram.com/tot_samiy_dibu" onClick={(e) => { e.preventDefault(); window.open("https://www.instagram.com/tot_samiy_dibu", '_blank'); }}>
+                                        <img src={require("../img/icons/instagramm.png")} alt=""  />
+                                    </a>
+                                </div>    
                     </div>
                 </div>
             </main>
